@@ -17,7 +17,7 @@ describe("useTransferList hook", () => {
 
     act(() => result.current.handleCheckItems(items[0]));
 
-    act(() => result.current.moveToRight());
+    act(() => result.current.handleMoveToRight());
 
     expect(result.current.rightItems).toContain(items[0]);
   });
@@ -26,9 +26,9 @@ describe("useTransferList hook", () => {
     const { result } = renderHook(() => useTransferList());
 
     act(() => result.current.handleCheckItems(items[0]));
-    act(() => result.current.moveToRight());
+    act(() => result.current.handleMoveToRight());
     act(() => result.current.handleCheckItems(items[0]));
-    act(() => result.current.moveToLeft());
+    act(() => result.current.handleMoveToLeft());
 
     expect(result.current.leftItems).toContain(items[0]);
     expect(result.current.rightItems).not.toContain(items[0]);

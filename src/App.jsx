@@ -8,8 +8,8 @@ const App = () => {
   const {
     rightItems,
     leftItems,
-    moveToRight,
-    moveToLeft,
+    handleMoveToRight,
+    handleMoveToLeft,
     checkedItems,
     handleCheckItems,
   } = useTransferList();
@@ -22,7 +22,10 @@ const App = () => {
           handleCheckItems={handleCheckItems}
           items={leftItems}
         />
-        <Actions moveToLeft={moveToLeft} moveToRight={moveToRight} />
+        <Actions
+          moveToLeft={handleMoveToLeft}
+          moveToRight={handleMoveToRight}
+        />
         <List
           checkedItems={checkedItems}
           handleCheckItems={handleCheckItems}

@@ -17,7 +17,7 @@ export const useTransferList = () => {
     setCheckedItems(() => newCheckedItems);
   };
 
-  const moveToRight = () => {
+  const handleMoveToRight = () => {
     const newRightItems = [...rightItems];
     let newLeftItems = [...leftItems];
 
@@ -30,7 +30,7 @@ export const useTransferList = () => {
     setCheckedItems([]);
   };
 
-  const moveToLeft = () => {
+  const handleMoveToLeft = () => {
     const newLeftItems = [...leftItems];
     let newRightItems = [...rightItems];
 
@@ -46,8 +46,8 @@ export const useTransferList = () => {
   return {
     rightItems,
     leftItems,
-    moveToLeft,
-    moveToRight,
+    handleMoveToLeft,
+    handleMoveToRight,
     checkedItems,
     handleCheckItems,
   };
